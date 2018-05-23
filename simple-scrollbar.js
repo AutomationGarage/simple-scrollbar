@@ -73,7 +73,6 @@
     this.bar = this.target.lastChild;
 
     dragDealer(this.bar, this);
-    this.moveBar();
 
     w.addEventListener('resize', this.moveBar.bind(this));
     this.el.addEventListener('scroll', this.moveBar.bind(this));
@@ -97,9 +96,8 @@
 
       var isRtl = _this.direction === 'rtl';
       var right = isRtl ?
-        (_this.target.clientWidth - _this.bar.clientWidth + 18) :
-        (_this.target.clientWidth - _this.bar.clientWidth) * -1;
-
+        15 :
+        (_this.bar.clientWidth - _this.target.clientWidth + 15);
       raf(function() {
         // Hide scrollbar if no scrolling is possible
         if(_this.scrollRatio >= 1) {
