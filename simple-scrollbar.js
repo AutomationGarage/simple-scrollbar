@@ -93,11 +93,7 @@
           _this = this;
 
       this.scrollRatio = ownHeight / totalHeight;
-
-      var isRtl = _this.direction === 'rtl';
-      var right = isRtl ?
-        15 :
-        (_this.bar.clientWidth - _this.target.clientWidth + 15);
+      var right = 0;
       raf(function() {
         // Hide scrollbar if no scrolling is possible
         if(_this.scrollRatio >= 1) {
